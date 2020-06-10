@@ -20,6 +20,17 @@ class XASession:
         print("Session disconnected")
         XASession.login_state = 0
 
+class XAQuery:
+    RES_PATH = "C:\\eBEST\\xingAPI\\Res\\"
+    tr_run_state = 0
+
+    def OnReceiveData(self, code):
+        print("OnReceiveData", code)
+        XAQuery.tr_run_state = 1
+
+    def OnReceiveMessage(self, error, code, message):
+        print("OnReceiveMessage", error, code, message, XAQuery.tr_run_state)
+
 class Ebest:
     def __init__(self, mode=None):
     # config.ini 파일을 로드해 사용자, 서버 정보 저장
