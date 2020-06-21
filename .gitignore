@@ -193,3 +193,4 @@ $RECYCLE.BIN/
 
 # config file
 conf/config.ini
+.vscode/settings.json
